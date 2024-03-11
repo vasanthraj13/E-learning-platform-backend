@@ -15,6 +15,7 @@ const getCourses = async (req, res, next) => {
 }
 
 const addCourse = async (req, res, next) => {
+  const data = req.body;
   const videoUrl = req.file.path;
   const userId = req.user.id;
   const newCourse = await db.course.create({
@@ -22,11 +23,9 @@ const addCourse = async (req, res, next) => {
       courseName : data.courseName,
       fees : data.fees,
       subject : data.subject,
-      instructor : {
-        connect : {
-          id : userId
-        }
-      }
+      videoUrl : videoUrl,
+      instructorId : userId,
+      courseDescription : data.courseDescription
     }
   })
 

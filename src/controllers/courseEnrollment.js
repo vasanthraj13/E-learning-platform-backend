@@ -1,5 +1,5 @@
 const db = require("../utils/config")
-const {} = require('../utils/customError')
+const {CustomError} = require('../utils/customError')
 
 
 const courseEnroll = async (req, res, next) => {

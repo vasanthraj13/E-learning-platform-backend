@@ -8,4 +8,4 @@ const jwtSign = (payload) => {
   return jwt.sign(payload, process.env.SECRET_KEY)
 }
 
-modules.export = { jwtSign, jwtVerify };
+module.exports = { jwtSign, jwtVerify };
